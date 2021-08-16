@@ -1,0 +1,25 @@
+inicio 
+  
+  farei{
+
+      
+        escrever(1,cor(2))
+        escrever(1,cor(4))
+
+    se ( (cor(2) == "BRANCO") e (cor(4)=="BRANCO") ) entao {
+        frente(100)
+        escrever(3,"Frente")
+    }
+  
+    se ( (cor(2) == "BRANCO") e (cor(4)=="PRETO") ) entao {
+        esquerda(100)
+        escrever(3,"Esquerda")
+    }
+
+    se ( (cor(2) == "PRETO") e (cor(4)=="BRANCO") ) entao {
+        direita(100)
+        escrever(3,"Direita")
+    }
+  } enquanto(1>0)
+
+fim
