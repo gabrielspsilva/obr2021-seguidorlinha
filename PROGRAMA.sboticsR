@@ -1,24 +1,52 @@
+texto esq    = ""
+texto esqExt = ""
+texto dir    = ""
+texto dirExt = "" 
+
 inicio 
   
   farei{
 
-      
-        escrever(1,cor(2))
-        escrever(1,cor(4))
+        esq     = cor(4)
+        esqExt  = cor(5)
+        
+        dir     = cor(2)
+        dirExt  = cor(1)
 
-    se ( (cor(2) == "BRANCO") e (cor(4)=="BRANCO") ) entao {
+        escrever(1,cor(2))
+        escrever(2,cor(4))
+
+    se ( (dir == "BRANCO") e (esq =="BRANCO") ) entao {
         frente(100)
         escrever(3,"Frente")
     }
   
-    se ( (cor(2) == "BRANCO") e (cor(4)=="PRETO") ) entao {
-        esquerda(100)
-        escrever(3,"Esquerda")
+    se ( (dir == "BRANCO") e (esq !="BRANCO") ) entao {
+        se(esqExt != "BRANCO") entao {
+            escrever(3,"90 PRA Esquerda")
+            frente(100)
+            esperar(700)
+            esquerda(300)
+            esperar(2200)
+        }
+        senao{
+            esquerda(100)
+        }
+        
+        
     }
 
-    se ( (cor(2) == "PRETO") e (cor(4)=="BRANCO") ) entao {
-        direita(100)
-        escrever(3,"Direita")
+    se ( (dir != "BRANCO") e (esq =="BRANCO") ) entao {
+         se(dirExt != "BRANCO") entao{
+            escrever(3,"90 PRA Direita")
+            frente(100)
+            esperar(700)
+            direita(300)
+            esperar(2200)
+        }
+        senao{
+            direita(100)
+        }
     }
   } enquanto(1>0)
 
